@@ -1,0 +1,7 @@
+{
+  "name": "Braimiprove",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
