@@ -22,7 +22,7 @@
 
 .cellRight input {
     display: inline-block;
-    border-right: 2px solid red;
+    border-right: 2px solid #5260ff;
     width: 35px;
     height: 35px;
     text-align: center;
@@ -31,7 +31,7 @@
 
 .cellTop input {
     display: inline-block;
-    border-top: 2px solid red;
+    border-top: 2px solid #5260ff;
     width: 35px;
     height: 35px;
     text-align: center;
@@ -40,8 +40,8 @@
 
 .cellTopRight input {
     display: inline-block;
-    border-top: 2px solid red;
-    border-right: 2px solid red;
+    border-top: 2px solid #5260ff;
+    border-right: 2px solid #5260ff;
 
     width: 35px;
     height: 35px;
@@ -59,7 +59,7 @@
     display: inline-block;
     width: 35px;
     height: 35px;
-
+    border: 1px solid #5260ff;
     text-align: center;
     font-size: 20px;
 }
