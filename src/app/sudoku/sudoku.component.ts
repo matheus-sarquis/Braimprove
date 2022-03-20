@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-sudoku',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SudokuComponent implements OnInit {
 
-  constructor() { }
+  constructor(public navCtrl : NavController) { }
 
   ngOnInit() {}
+
+  backHome(){
+    this.navCtrl.navigateForward('/home');    
+  }
 
 }

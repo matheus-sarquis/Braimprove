@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { MemoriaComponent } from './../memoria/memoria.component';
+
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,17 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor( public navCtrl: NavController) {}
 
+  openMemoria(){
+    this.navCtrl.navigateForward('/memoria');    
+  }
+
+  openSudoku(){
+    this.navCtrl.navigateForward('/sudoku');    
+  }
+
+  openTiroAoAlvo(){
+    this.navCtrl.navigateForward('/reflection');    
+  }
 }

@@ -30,6 +30,11 @@
        //ver porque o list notes tira a responsividade da dificuldade
   }
 
+  .back{
+    flex-direction: row;
+    padding: 3%;
+}
+
   .content{
     text-align: center;
     display: flex;

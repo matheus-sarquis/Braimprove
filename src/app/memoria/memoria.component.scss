@@ -27,6 +27,12 @@
     margin: auto;
     display: flex;
     flex-direction: row;
+    //ver porque o list notes tira a responsividade da dificuldade
+  }
+
+  .back{
+      flex-direction: row;
+      padding: 3%;
   }
 
   .content{
