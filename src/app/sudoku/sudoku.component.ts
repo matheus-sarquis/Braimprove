@@ -8,16 +8,33 @@ import { NavController } from '@ionic/angular';
 })
 export class SudokuComponent implements OnInit {
 
-  constructor(public navCtrl : NavController) { }
+  constructor(public navCtrl: NavController) { }
 
-  ngOnInit() {}
+  Selected = 1
 
-  backHome(){
-    this.navCtrl.navigateForward('/home');    
+  ngOnInit() { }
+
+  backHome() {
+    this.navCtrl.navigateForward('/home');
   }
 
-  jogarSudoku(){
-    this.navCtrl.navigateForward('/sudokuGame');    
+  jogarSudoku() {
+    this.navCtrl.navigateForward('/sudokuGame');
   }
 
+  selectionEasy() {
+    this.Selected = 1
+    console.log(this.Selected)
+  }
+
+
+  selectionMedium() {
+    this.Selected = 2
+    console.log(this.Selected)
+  }
+
+  selectionHard() {
+    this.Selected = 3
+    console.log(this.Selected)
+  }
 }
