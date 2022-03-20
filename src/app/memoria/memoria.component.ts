@@ -16,4 +16,8 @@ export class MemoriaComponent implements OnInit {
     this.navCtrl.navigateForward('/home');    
   }
 
+  jogarMemoria(){
+    this.navCtrl.navigateForward('/memoriaGame');    
+  }
+
 }

@@ -1,27 +1,26 @@
-<div class="home">
-
+<div class="home" >
   <div class="logo">
     <img class="brainimg" src="assets/icon/brain.png">
     <h1>Jogo da Memória</h1>
   </div>
 
   <div class="content">
-    <div class="listnotes">
 
+    <div class="listnotes">
       <ion-note class="note" color="success">FÁCIL</ion-note>
       <ion-note class="note" color="warning">MÉDIO</ion-note>
       <ion-note class="note" color="danger">DÍFICIL</ion-note>
     </div>
 
-    <ion-button class="btn" style="margin: 20px" color="tertiary">
+    <ion-button class="btn" style="margin: 20px" color="tertiary" jogarMemoria (click)="jogarMemoria()">
       JOGAR
     </ion-button>
 
-  <ion-fab  class="back" vertical="bottom" horizontal="start" slot="fixed" backHome (click)="backHome()">
-    <ion-fab-button color="tertiary">
-      <ion-icon name="arrow-back-circle"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+    <ion-fab  class="back" vertical="bottom" horizontal="start" slot="fixed" backHome (click)="backHome()">
+      <ion-fab-button color="tertiary">
+        <ion-icon name="arrow-back-circle"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
 
   </div>
 </div>

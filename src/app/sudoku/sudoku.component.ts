@@ -16,4 +16,8 @@ export class SudokuComponent implements OnInit {
     this.navCtrl.navigateForward('/home');    
   }
 
+  jogarSudoku(){
+    this.navCtrl.navigateForward('/sudokuGame');    
+  }
+
 }

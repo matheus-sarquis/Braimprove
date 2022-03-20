@@ -23,4 +23,13 @@ export class HomePage {
   openTiroAoAlvo(){
     this.navCtrl.navigateForward('/reflection');    
   }
+
+  openComoJogar(){
+    this.navCtrl.navigateForward('/comojogar');    
+  }
+
+  openSobre(){
+    this.navCtrl.navigateForward('/sobre');    
+  }
+
 }

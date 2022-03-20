@@ -23,7 +23,7 @@
 }
 
 .logo{
-  padding: 60px 90px;
+  padding: 40px 90px;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -36,10 +36,11 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding: 30px 50px;
+  padding: 0px 50px;
   margin: 10px;
 }
 
 .link{
   color: black;
+  text-decoration: underline black; 
 }

@@ -13,6 +13,11 @@ export class ReflectionComponent implements OnInit {
   ngOnInit() {}
 
   backHome(){
-    this.navCtrl.navigateForward('/home');    
+    this.navCtrl.navigateForward('/home');   
+  }
+  jogarReflection(){
+      this.navCtrl.navigateForward('/reflectionGame');    
+     
   }
 }
+
