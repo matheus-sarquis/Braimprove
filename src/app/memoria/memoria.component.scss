@@ -4,6 +4,13 @@
     height: 100%;
     width: 100%;
   }
+
+  .content{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 90px 40px;
+ }
   
   .brainimg{
     width: 80px;
@@ -33,13 +40,6 @@
   .back{
       flex-direction: row;
       padding: 3%;
-  }
-
-  .content{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    padding: 90px 40px;
   }
   
   .btn{

@@ -1,3 +1,44 @@
-<p>
-  comojogar works!
-</p>
+<!-- Getting and setting the state of the accordion group -->
+<ion-accordion-group value="numbers">
+  <ion-accordion value="sudoku">
+    <ion-item slot="header">
+      <ion-label>Sudoku</ion-label>
+    </ion-item>
+
+    <ion-list slot="content">
+      <ion-item>
+        <ion-label>Este exercício tem como objetivo exercitar a atenção e o reciocínio do jogador.
+          No sudoku, você deve preencher todos os campos com valores de 1 a 9, e o objetivo é preencher o tabuleiro todo de forma correta.
+          Para o tabuleiro estar correto, não podem haver números iguais na mesma linha, coluna ou na mesma caixa.</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-accordion>
+
+  <ion-accordion value="jogodamemoria">
+    <ion-item slot="header">
+      <ion-label>Jogo da Memória</ion-label>
+    </ion-item>
+    <ion-list slot="content">
+      <ion-item>
+        <ion-label>Este exercício tem como objetivo exercitar a memória do jogador.
+          O jogo da memória consiste em você acertar todos os pares de imagens iguais que estão viradas para baixo no menor número de tentativas possível.
+          Você pode selecionar duas imagens por tentativa, se elas forem iguais, ficaram para cima, se forem diferentes elas irão virar novamente.</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-accordion>
+
+  <ion-accordion value="tiroaoalvo">
+    <ion-item slot="header">
+      <ion-label>Tiro ao Alvo</ion-label>
+    </ion-item>
+    <ion-list slot="content">
+      <ion-item>
+        <ion-label>Este exercício tem como objetivo exercitar a coordenação motora e o reflexo do jogador.
+          Você deve acertar a maior quantidade de alvos antes do tempo se esgotar.
+          Ao acertar um alvo, ira aparecer outro alvo na tela em outra posição que deve ser acertado.
+          Se você demorar muito para atingir o alvo, ele irã desaparecer e vocÊ perde uma vida.</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-accordion>
+
+</ion-accordion-group>
