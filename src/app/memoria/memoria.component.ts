@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MemoriaComponent implements OnInit {
 
+  Selected = 1
+
   constructor(public navCtrl : NavController) { }
 
   ngOnInit() {}
@@ -20,4 +22,19 @@ export class MemoriaComponent implements OnInit {
     this.navCtrl.navigateForward('/memoriaGame');    
   }
 
+  selectionEasy(){
+    this.Selected = 1
+    console.log(this.Selected)
+  }
+
+
+  selectionMedium(){
+    this.Selected = 2
+    console.log(this.Selected)
+  }
+
+  selectionHard(){
+    this.Selected = 3
+    console.log(this.Selected)
+  }
 }

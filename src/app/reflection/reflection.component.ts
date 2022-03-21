@@ -8,6 +8,8 @@ import { NavController } from '@ionic/angular';
 })
 export class ReflectionComponent implements OnInit {
 
+  Selected = 1
+
   constructor(public navCtrl : NavController) { }
 
   ngOnInit() {}
@@ -16,8 +18,23 @@ export class ReflectionComponent implements OnInit {
     this.navCtrl.navigateForward('/home');   
   }
   jogarReflection(){
-      this.navCtrl.navigateForward('/reflectionGame');    
-     
+      this.navCtrl.navigateForward('/reflectionGame');          
+  }
+
+  selectionEasy(){
+    this.Selected = 1
+    console.log(this.Selected)
+  }
+
+
+  selectionMedium(){
+    this.Selected = 2
+    console.log(this.Selected)
+  }
+
+  selectionHard(){
+    this.Selected = 3
+    console.log(this.Selected)
   }
 }
 
