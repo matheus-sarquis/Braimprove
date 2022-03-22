@@ -13,6 +13,9 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import {enableProdMode} from '@angular/core';
+
+enableProdMode();
 
 @NgModule({
   declarations: [AppComponent, MemoriaComponent, ReflectionComponent, SudokuComponent, SudokuGameComponent, ComojogarComponent],

@@ -27,6 +27,65 @@
 </html>
 
 <script type="text/javascript">
+  let hasFlippedCard = false;
+  let lockBoard = false;
+  let firstCard, secondCard;
+  let cardsVirados = 0;
+
+  function flipCard(divObj) {
+    if (lockBoard) return;
+
+    if (divObj === firstCard) return;
+
+    if (divObj)
+      divObj.classList.add('flip');
+
+    if (!hasFlippedCard) {
+      hasFlippedCard = true;
+      firstCard = divObj;
+      return;
+    }
+
+    secondCard = divObj;
+    checkForMatch();
+  }
+
+  function checkForMatch() {
+    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    isMatch ? disableCards() : unflipCards();
+
+    //checkifLastCard();
+  }
+
+  async function checkifLastCard() {
+    if (cardsVirados == 16)
+      await window.prompt("sometext", "defaultText");
+  }
+
+  function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+    
+    cardsVirados++;
+    cardsVirados++;
+
+    resetBoard();
+  }
+
+  function unflipCards() {
+    lockBoard = true;
+    setTimeout(() => {
+      firstCard.classList.remove('flip');
+      secondCard.classList.remove('flip');
+      resetBoard();
+    }, 1500);
+  }
+
+  function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+  }
+
   function loadImage(quantidade, fotossalvas, fotos, imgsusadas) {
     var preencheu = false;
     var ftssalvas = fotossalvas;
@@ -35,7 +94,7 @@
     var imagem;
     var imgs = imgsusadas;
 
-    if(!imgs)
+    if (!imgs)
       imgs = "";
 
     const request = new XMLHttpRequest();
@@ -48,11 +107,6 @@
       imagem = myJSON.image;
 
       if (!fts.includes(imagem) && (!((quantidade + 1) == ftssalvas))) {
-        var position1 = getImagePosition(imgs);
-        imgs += position1;
-        var position2 = getImagePosition(imgs);
-        imgs += position2;
-
         console.log(imgs)
 
         image = document.getElementById('imagem' + ftssalvas.toString());
@@ -66,14 +120,19 @@
       if (!((quantidade + 1) == ftssalvas))
         loadImage(quantidade, ftssalvas, fts, imgs)
       else {
+        console.log("antes dos cards");
+        document.querySelectorAll('.memory-card').forEach(card => {
+          console.log("entrou no random");
+          let ramdomPos = Math.floor(Math.random() * 16);
+          card.style.order = ramdomPos;
+        });
+        console.log("pos cards");
+
         for (var index = 1; index <= 16; index++) {
           image = document.getElementById('imagem' + index.toString());
           if (!image.src)
             image.hidden = true
         }
-
-
-
       }
     }
   };
@@ -83,21 +142,11 @@
 
     while (!achou) {
       var numero = Math.random() * (18 - 1) + 1;
-      if (!imgs.includes(numero.toString().substring(0, 2).replace('.','')) && numero.toString().substring(0, 2).replace('.','')< "16" )
+      if (!imgs.includes(numero.toString().substring(0, 2).replace('.', '')) && numero.toString().substring(0, 2).replace('.', '') < "16")
         achou = true;
     }
 
-    console.log(numero.toString().substring(0, 2).replace('.',''))
-    return numero.toString().substring(0, 2).replace('.','');
-  };
-
-  function alteraImagem(id) {
-    var image = document.getElementById(id);
-    if (image.src == 'assets/icon/yugioh.jpg') {
-
-    }
-
-
-
+    console.log(numero.toString().substring(0, 2).replace('.', ''))
+    return numero.toString().substring(0, 2).replace('.', '');
   };
 </script>
