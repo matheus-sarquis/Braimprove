@@ -44,3 +44,14 @@
   color: black;
   text-decoration: underline black; 
 }
+
+.whatsapp-share-button {
+  display: inline-block;            
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  background-size: 100% 100%; /* ou 'contain' */
+  //background-image: url("[URL-DO-ICONE]");
+  background-repeat: no-repeat;
+  background-position: center;
+}
