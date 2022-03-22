@@ -14,21 +14,21 @@ export class HomePage implements ViewWillLeave {
   ionViewWillLeave() {
 
     let options: NativeTransitionOptions = {
-       direction: 'up',
-       duration: 500,
-       slowdownfactor: 3,
-       slidePixels: 20,
-       iosdelay: 100,
-       androiddelay: 150,
-       fixedPixelsTop: 0,
-       fixedPixelsBottom: 60
-      }
-   
+      direction: 'up',
+      duration: 500,
+      slowdownfactor: 3,
+      slidePixels: 20,
+      iosdelay: 100,
+      androiddelay: 150,
+      fixedPixelsTop: 0,
+      fixedPixelsBottom: 60
+    }
+
     this.nativePageTransitions.slide(options)
       .then()
       .catch();
-   
-   }
+
+  }
 
   constructor(public navCtrl: NavController, private nativePageTransitions: NativePageTransitions) { }
 
@@ -68,5 +68,36 @@ export class HomePage implements ViewWillLeave {
     this.navCtrl.navigateForward('/sobre');
   }
 
+  open() {
+    var msg = 'Baixe o mais novo aplicativo de melhoria cerebral, Braimprove: '+ 'https://cutt.ly/mSUmBsT'
+    console.log("4")
+    let target = `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
+    document.getElementById("whatsapp-share-btt").setAttribute('href', "https://api.whatsapp.com/send?text=" + msg)
 
+    this.nativePageTransitions.slide(this.options);
+    this.navCtrl.navigateForward('/home');
+  }
+
+
+  //  whats() {
+  //   console.log("5")
+  //   //conteúdo que será compartilhado: Título da página + URL
+  //   var conteudo = encodeURIComponent(document.title + " " + window.location.href);
+  //   //altera a URL do botão //https://cutt.ly/mSUmBsT
+  
+  //   document.getElementById("whatsapp-share-btt").setAttribute('href', "https://api.whatsapp.com/send?text=" + conteudo)
+  //}
 }
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   //conteúdo que será compartilhado: Título da página + URL
+//   var conteudo = encodeURIComponent(document.title + " " + window.location.href);
+//   //altera a URL do botão
+//   document.getElementById("whatsapp-share-btt").href = "https://api.whatsapp.com/send?text=" + conteudo;
+// }, false);
+
+
+
+
+
+
