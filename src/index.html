@@ -54,10 +54,10 @@
       var data = {
         board: obj
       }
-      
+
       console.log(obj)
       const request = new XMLHttpRequest();
-      const url = 'https://sugoku.herokuapp.com/validate';
+      const url = 'https://sugoku.herokuapp.com/solve';
       request.open("POST", url, data);
       request.send();
       request.onloadend = (e) => {
@@ -67,10 +67,10 @@
     }
   }
 
-  function carregarSudoku() {
+  function carregarSudoku(dificuldade) {
     limparSudoko()
     const request = new XMLHttpRequest();
-    const url = 'https://sugoku.herokuapp.com/board?difficulty=easy';
+    const url = 'https://sugoku.herokuapp.com/board?difficulty=' + dificuldade;
     request.open("GET", url);
     request.send();
 
@@ -196,7 +196,7 @@
         fts += imagem;
         ftssalvas++;
       }
-      console.log(quantidade+1)
+      console.log(quantidade + 1)
       console.log(ftssalvas)
 
       if (!((quantidade + 1) == ftssalvas))
