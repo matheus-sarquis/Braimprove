@@ -14,8 +14,8 @@ export class SudokuGameComponent implements OnInit {
   ngOnInit() {
   }
 
-  backHome() {
-    this.navCtrl.navigateForward('/home');
+  backSudoku() {
+    this.navCtrl.navigateForward('/sudoku');
   }
   selection(number) {
     var quadradoSudoko = document.getElementById(number.toString()).children[0];

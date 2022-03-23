@@ -8,33 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MemoriaComponent implements OnInit {
 
-  Selected = 1
+  Selected = 4
 
-  constructor(public navCtrl : NavController) { }
+  constructor(public navCtrl: NavController) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  backHome(){
-    this.navCtrl.navigateForward('/home');    
+  backHome() {
+    this.navCtrl.navigateForward('/home');
   }
 
-  jogarMemoria(){
-    this.navCtrl.navigateForward('/memoriaGame');    
+  jogarMemoria() {
+    this.navCtrl.navigateForward('/memoriaGame?dificuldade=' + this.Selected);
   }
 
-  selectionEasy(){
-    this.Selected = 1
+  selectionEasy() {
+    this.Selected = 4
     console.log(this.Selected)
   }
 
 
-  selectionMedium(){
-    this.Selected = 2
+  selectionMedium() {
+    this.Selected = 6
     console.log(this.Selected)
   }
 
-  selectionHard(){
-    this.Selected = 3
+  selectionHard() {
+    this.Selected = 8
     console.log(this.Selected)
   }
 }

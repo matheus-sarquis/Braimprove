@@ -1,3 +1,4 @@
+import { MemoriaGameComponent } from './games/memoriaGame/memoriaGame.component';
 import { ComojogarComponent } from './telas/comojogar/comojogar.component';
 import { SobreComponent } from './telas/sobre/sobre.component';
 import { SudokuGameComponent } from './games/sudokuGame/sudokuGame.component';
@@ -18,7 +19,7 @@ import {enableProdMode} from '@angular/core';
 enableProdMode();
 
 @NgModule({
-  declarations: [AppComponent, MemoriaComponent, ReflectionComponent, SudokuComponent, SudokuGameComponent, ComojogarComponent],
+  declarations: [AppComponent, MemoriaComponent, ReflectionComponent, SudokuComponent, SudokuGameComponent, ComojogarComponent, MemoriaGameComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

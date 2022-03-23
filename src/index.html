@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Ionic App</title>
+  <title>Braimprove</title>
 
   <base href="/" />
 
@@ -132,12 +132,18 @@
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
     isMatch ? disableCards() : unflipCards();
 
-    //checkifLastCard();
+    checkifLastCard();
   }
 
-  async function checkifLastCard() {
-    if (cardsVirados == 16)
-      await window.prompt("sometext", "defaultText");
+  function checkifLastCard() {
+    if (cardsVirados == 16) {
+      setTimeout(msg, 1000);
+    }
+
+  }
+  function msg() {
+    alert('Parabéns você ganhou');
+    document.location.reload();
   }
 
   function disableCards() {
@@ -164,16 +170,13 @@
     [firstCard, secondCard] = [null, null];
   }
 
-  function loadImage(quantidade, fotossalvas, fotos, imgsusadas) {
+  function loadImage(quantidade, fotossalvas, fotos) {
+
     var preencheu = false;
     var ftssalvas = fotossalvas;
     var fts = fotos;
     var image;
     var imagem;
-    var imgs = imgsusadas;
-
-    if (!imgs)
-      imgs = "";
 
     const request = new XMLHttpRequest();
     const url = 'https://forza-api.tk';
@@ -185,7 +188,6 @@
       imagem = myJSON.image;
 
       if (!fts.includes(imagem) && (!((quantidade + 1) == ftssalvas))) {
-        console.log(imgs)
 
         image = document.getElementById('imagem' + ftssalvas.toString());
         image.src = imagem;
@@ -194,14 +196,16 @@
         fts += imagem;
         ftssalvas++;
       }
+      console.log(quantidade+1)
+      console.log(ftssalvas)
 
       if (!((quantidade + 1) == ftssalvas))
-        loadImage(quantidade, ftssalvas, fts, imgs)
+        loadImage(quantidade, ftssalvas, fts)
       else {
         console.log("antes dos cards");
         document.querySelectorAll('.memory-card').forEach(card => {
           console.log("entrou no random");
-          let ramdomPos = Math.floor(Math.random() * 16);
+          let ramdomPos = Math.floor(Math.random() * (quantidade * 2));
           card.style.order = ramdomPos;
         });
         console.log("pos cards");
