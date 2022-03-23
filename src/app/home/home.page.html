@@ -1,13 +1,14 @@
 <div class="home">
-  <div class="persona">
-    <img class="brainimg" src="assets/icon/brain.png">
-    <h1>tesste</h1>
-  </div>
   <div class="logo">
     <img class="brainimg" src="assets/icon/brain.png">
     <h1>Braimprove</h1>
   </div>
 
+  <div class="persona">
+    <img id="IconePlayer" class="amimalft" src="assets/icon/brain.png" onload="loadIconePlayereText()">
+    <h1 id="Fact" class="fact">Nome do Animal</h1>
+  </div>
+  
   <div class="content">
     <ion-button class="btn" style="margin: 20px" color="tertiary" openSudoku (click)="openSudoku()">
       SUDOKU

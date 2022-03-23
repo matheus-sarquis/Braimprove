@@ -27,6 +27,35 @@
 </html>
 
 <script type="text/javascript">
+  let srcImagemAnimal = "";
+  let srcFactAnimal = "";
+
+  function loadIconePlayereText() {
+    var imagem = document.getElementById("IconePlayer");
+    var fact = document.getElementById("Fact");
+    if (imagem.getAttribute("src") == "assets/icon/brain.png" && srcImagemAnimal == '') {
+      const request = new XMLHttpRequest();
+      const url = 'https://zoo-animal-api.herokuapp.com/animals/rand';
+      request.open("GET", url);
+      request.send();
+
+      request.onloadend = (e) => {
+        const myJSON = JSON.parse(request.response);
+        console.log(myJSON.image_link);
+        console.log(myJSON.name);
+        imagem.setAttribute('src', myJSON.image_link);
+        fact.innerHTML = myJSON.name;
+
+        srcImagemAnimal = myJSON.image_link;
+        srcFactAnimal = myJSON.name;
+      }
+    }
+    else {
+      imagem.setAttribute('src', srcImagemAnimal);
+      fact.setAttribute('font', srcFactAnimal)
+    }
+  }
+
   function validarSudoku() {
     var obj = [[], [], [], [], [], [], [], [], []];
     var incompleto = false;
@@ -109,6 +138,7 @@
   let lockBoard = false;
   let firstCard, secondCard;
   let cardsVirados = 0;
+  let dificuldade = 0;
 
   function flipCard(divObj) {
     if (lockBoard) return;
@@ -136,7 +166,7 @@
   }
 
   function checkifLastCard() {
-    if (cardsVirados == 16) {
+    if (cardsVirados == (dificuldade * 2)) {
       setTimeout(msg, 1000);
     }
 
@@ -212,9 +242,13 @@
 
         for (var index = 1; index <= 16; index++) {
           image = document.getElementById('imagem' + index.toString());
-          if (!image.src)
-            image.hidden = true
+          if (!image.src) {
+            var divImagem = document.getElementById('memory-game' + index.toString());
+            divImagem.hidden = true
+          }
         }
+
+        dificuldade = quantidade;
       }
     }
   };
