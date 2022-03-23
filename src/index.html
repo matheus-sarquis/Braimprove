@@ -41,8 +41,6 @@
 
       request.onloadend = (e) => {
         const myJSON = JSON.parse(request.response);
-        console.log(myJSON.image_link);
-        console.log(myJSON.name);
         imagem.setAttribute('src', myJSON.image_link);
         fact.innerHTML = myJSON.name;
 
@@ -84,14 +82,12 @@
         board: obj
       }
 
-      console.log(obj)
       const request = new XMLHttpRequest();
       const url = 'https://sugoku.herokuapp.com/solve';
       request.open("POST", url, data);
       request.send();
       request.onloadend = (e) => {
         const myJSON = JSON.parse(request.response);
-        console.log(myJSON);
       }
     }
   }
@@ -226,19 +222,14 @@
         fts += imagem;
         ftssalvas++;
       }
-      console.log(quantidade + 1)
-      console.log(ftssalvas)
 
       if (!((quantidade + 1) == ftssalvas))
         loadImage(quantidade, ftssalvas, fts)
       else {
-        console.log("antes dos cards");
         document.querySelectorAll('.memory-card').forEach(card => {
-          console.log("entrou no random");
           let ramdomPos = Math.floor(Math.random() * (quantidade * 2));
           card.style.order = ramdomPos;
         });
-        console.log("pos cards");
 
         for (var index = 1; index <= 16; index++) {
           image = document.getElementById('imagem' + index.toString());
@@ -251,18 +242,5 @@
         dificuldade = quantidade;
       }
     }
-  };
-
-  function getImagePosition(imgs) {
-    var achou = false;
-
-    while (!achou) {
-      var numero = Math.random() * (18 - 1) + 1;
-      if (!imgs.includes(numero.toString().substring(0, 2).replace('.', '')) && numero.toString().substring(0, 2).replace('.', '') < "16")
-        achou = true;
-    }
-
-    console.log(numero.toString().substring(0, 2).replace('.', ''))
-    return numero.toString().substring(0, 2).replace('.', '');
   };
 </script>
