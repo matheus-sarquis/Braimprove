@@ -14,18 +14,17 @@ export class SudokuGameComponent implements OnInit {
   ngOnInit() {
   }
 
-  backHome() {
-    this.navCtrl.navigateForward('/home');
+  backSudoku() {
+    this.navCtrl.navigateForward('/sudoku');
   }
+
   selection(number){
     console.log(this.Selected)
     if(this.Selected === 0)
     {
       return;
     }
-    console.log('tentou1')
     var a = document.getElementById(number).children[0]
-    console.log(a)
     a.setAttribute('value',this.Selected.toString()) 
   }
 
