@@ -12,6 +12,14 @@
     padding: 100px;
   }
 
+  .load{
+    height: 150px;
+  }
+
+  .init{
+    padding: 0px 110px;
+  }
+
 .cell input {
     display: inline-block;
     width: 35px;

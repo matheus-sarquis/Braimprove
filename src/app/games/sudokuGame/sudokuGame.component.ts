@@ -14,6 +14,13 @@ export class SudokuGameComponent implements OnInit {
   ngOnInit() {
   }
 
+  start() {
+    colocaLoading()
+    setTimeout(tiraLoading, 3000);
+    setTimeout(mostraJogo, 3000);
+    setTimeout(tiraBotao, 3000);
+  }
+
   backSudoku() {
     this.navCtrl.navigateForward('/sudoku');
   }
@@ -64,4 +71,20 @@ export class SudokuGameComponent implements OnInit {
   selection9() {
     this.Selected = 9
   }
+}
+
+function tiraLoading() {
+  document.getElementById('1').hidden = true
+}
+
+function colocaLoading() {
+  document.getElementById('1').hidden = false
+}
+
+function mostraJogo() {
+  document.getElementById('2').hidden = false
+}
+
+function tiraBotao() {
+  document.getElementById('3').hidden = true
 }

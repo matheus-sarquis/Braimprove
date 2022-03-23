@@ -1,6 +1,11 @@
 <div class="home">
-  <button onclick="carregarSudoku('easy')">começar</button>
-  <div class="content">
+  <div class="init">
+    <ion-button id="3" onclick="carregarSudoku('easy')" style="margin: 20px" color="tertiary" (click)="start()">
+        COMEÇAR
+    </ion-button>
+    <ion-progress-bar id="1" type="indeterminate" hidden></ion-progress-bar>
+</div>
+  <div class="content" hidden id="2">
     <tr class="row">
       <td id="00" class="cell"><input type="text" maxlength="1" readonly (click)="selection('00')"></td>
       <td id="01" class="cell"><input type="text" maxlength="1" readonly (click)="selection('01')"></td>
@@ -130,9 +135,11 @@
         </td>
       </tr>
     </div>
-
-    <button onclick="validarSudoku()">Validar</button>
-
+    <div class="init">
+      <ion-button id="3" onclick="validarSudoku()" style="margin: 20px" color="tertiary" (click)="start()">
+          VALIDAR
+      </ion-button>
+  </div>
     <ion-fab class="back" vertical="bottom" horizontal="start" slot="fixed" backHome (click)="backSudoku()">
       <ion-fab-button color="tertiary">
         <ion-icon name="arrow-back-circle"></ion-icon>

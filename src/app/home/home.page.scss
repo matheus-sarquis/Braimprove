@@ -23,7 +23,17 @@
 }
 
 .logo{
-  padding: 40px 90px;
+  padding: 20px 90px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  display:flex;
+  flex-direction: row;
+}
+
+.persona{
+  padding: 10px 90px;
   text-align: center;
   justify-content: center;
   align-items: center;
