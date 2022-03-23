@@ -27,6 +27,84 @@
 </html>
 
 <script type="text/javascript">
+  function validarSudoku() {
+    var obj = [[], [], [], [], [], [], [], [], []];
+    var incompleto = false;
+
+    for (var firstNum = 0; firstNum != 9; firstNum++) {
+      for (var secondNum = 0; secondNum != 9; secondNum++) {
+        var quadradoSudoko = document.getElementById(firstNum.toString() + secondNum.toString());
+
+        if (quadradoSudoko.children[0].value != undefined) {
+          var quadradoSudokoFilho = document.getElementById(firstNum.toString() + secondNum.toString()).children[0];
+          var valor = quadradoSudokoFilho.getAttribute("value").valueOf();
+
+          if (valor != "") {
+            obj[firstNum][secondNum] = quadradoSudokoFilho.getAttribute("value");
+
+          } else
+            incompleto = true;
+        }
+      }
+    }
+
+    if (incompleto)
+      alert("complete todos os campos");
+    else {
+      var data = {
+        board: obj
+      }
+      
+      console.log(obj)
+      const request = new XMLHttpRequest();
+      const url = 'https://sugoku.herokuapp.com/validate';
+      request.open("POST", url, data);
+      request.send();
+      request.onloadend = (e) => {
+        const myJSON = JSON.parse(request.response);
+        console.log(myJSON);
+      }
+    }
+  }
+
+  function carregarSudoku() {
+    limparSudoko()
+    const request = new XMLHttpRequest();
+    const url = 'https://sugoku.herokuapp.com/board?difficulty=easy';
+    request.open("GET", url);
+    request.send();
+
+    request.onloadend = (e) => {
+      const myJSON = JSON.parse(request.response);
+
+      preencheSudoku(myJSON.board);
+    }
+
+  }
+
+  function limparSudoko() {
+    for (var firstNum = 0; firstNum != 9; firstNum++) {
+      for (var secondNum = 0; secondNum != 9; secondNum++) {
+        var quadradoSudoko = document.getElementById(firstNum.toString() + secondNum.toString()).children[0];
+        quadradoSudoko.setAttribute("value", "");
+        quadradoSudoko.dataset.framework = "";
+      }
+    }
+  }
+
+  function preencheSudoku(numeros) {
+
+    for (var firstNum = 0; firstNum != 9; firstNum++) {
+      for (var secondNum = 0; secondNum != 9; secondNum++) {
+        if (numeros[firstNum][secondNum] != 0) {
+          var quadradoSudoko = document.getElementById(firstNum.toString() + secondNum.toString()).children[0];
+          quadradoSudoko.setAttribute('value', numeros[firstNum][secondNum].toString());
+          quadradoSudoko.dataset.framework = "api";
+        }
+      }
+    }
+  }
+
   let hasFlippedCard = false;
   let lockBoard = false;
   let firstCard, secondCard;
@@ -65,7 +143,7 @@
   function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-    
+
     cardsVirados++;
     cardsVirados++;
 
