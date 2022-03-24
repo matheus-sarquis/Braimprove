@@ -2,7 +2,7 @@
 
 Braimprove - Aplicativo para treinamento cerebral feito no 7º Semestre de EC
 
-     O Braimprove é um sistema que tem como objetivo exercitar as faculdades mentais através de minigames divertidos.
+        O Braimprove é um sistema que tem como objetivo exercitar as faculdades mentais através de minigames divertidos.
         O minigame Jogo da Memória tem como objetivo aperfeiçoar a memória do usuário. E o Sudoku tem como objetivo
         melhorar o raciocínio lógico e atenção do jogador.
 	
