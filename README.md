@@ -1,4 +1,4 @@
-# 📝 Braimprove
+# 📝 Braimprove.
 
 Braimprove - Aplicativo para treinamento cerebral feito no 7º Semestre de EC
 
