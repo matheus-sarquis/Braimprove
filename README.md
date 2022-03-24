@@ -16,12 +16,23 @@ Braimprove - Aplicativo para treinamento cerebral feito no 7º Semestre de EC
 - Lucas Frias Oliveira     - 081190009 
 - Matheus Faria Sarquis    - 081190031
 
-## 📦 APIS Utilizadas
+  
+## 📦 Dependencias
+  
+###  APIS Utilizadas
 
 - API Whats App
 - API Sugoku
 - API Forza.tk
 - API Zoologico
+  
+###  Linguagens Utilizadas
+
+- TypeScript
+- JavaScript
+- CSS
+- SCSS
+- HTML
   
 ## 💥 Telas 
 Vídeo mostrando as telas e o funcionamento do aplicativo 
