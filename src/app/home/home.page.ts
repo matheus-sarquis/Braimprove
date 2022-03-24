@@ -53,11 +53,6 @@ export class HomePage implements ViewWillLeave {
     this.navCtrl.navigateForward('/sudoku');
   }
 
-  openTiroAoAlvo() {
-    this.nativePageTransitions.slide(this.options);
-    this.navCtrl.navigateForward('/reflection');
-  }
-
   openComoJogar() {
     this.nativePageTransitions.slide(this.options);
     this.navCtrl.navigateForward('/comojogar');

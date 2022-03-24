@@ -19,7 +19,7 @@ import {enableProdMode} from '@angular/core';
 enableProdMode();
 
 @NgModule({
-  declarations: [AppComponent, MemoriaComponent, ReflectionComponent, SudokuComponent, SudokuGameComponent, ComojogarComponent, MemoriaGameComponent],
+  declarations: [AppComponent, MemoriaComponent, ReflectionComponent, SudokuComponent, SudokuGameComponent, ComojogarComponent, MemoriaGameComponent, SobreComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
