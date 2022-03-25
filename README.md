@@ -34,6 +34,11 @@ Braimprove - Aplicativo para treinamento cerebral feito no 7º Semestre de EC
 - SCSS
 - HTML
   
+ ### Auxiliares
+  
+- IONIC
+- Angular.js
+  
 ## 💥 Telas 
 Vídeo mostrando as telas e o funcionamento do aplicativo 
 <a href=https://youtu.be/dKVk1uaBDfU>Clique Aqui<a/>	
