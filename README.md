@@ -33,12 +33,13 @@ Braimprove - Aplicativo para treinamento cerebral feito no 7º Semestre de EC
 - CSS
 - SCSS
 - HTML
--Java
+- Java
   
  ### Auxiliares
   
 - IONIC
 - Angular.js
+- Spring boot
   
 ## Script Database
 
