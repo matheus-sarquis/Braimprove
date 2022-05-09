@@ -23,7 +23,7 @@ Braimprove - Aplicativo para treinamento cerebral feito no 7º Semestre de EC
 
 - API Whats App
 - API Sugoku
-- API Forza.tk
+- API local, desenvolvida pelos autores
 - API Zoo Animals
   
 ###  Linguagens Utilizadas
@@ -33,15 +33,39 @@ Braimprove - Aplicativo para treinamento cerebral feito no 7º Semestre de EC
 - CSS
 - SCSS
 - HTML
+-Java
   
  ### Auxiliares
   
 - IONIC
 - Angular.js
   
-## 💥 Telas 
-Vídeo mostrando as telas e o funcionamento do aplicativo 
-<a href=https://youtu.be/dKVk1uaBDfU>Clique Aqui<a/>	
-  
+## Script Database
+
+CREATE DATABASE [Users]
+
+CREATE DATABASE [Users]
+
+USE [Users]
+
+create TABLE [dbo].[Score]
+(
+[Id] int IDENTITY,
+[Nickname] NVARCHAR(50), 
+[Game] NVARCHAR(50),
+[Score] float,
+[Dificuldade] NVARCHAR(10)
+)
+
+#Stored Procedures
+
+create procedure spInsertScore
+( 
+@Nickname NVARCHAR(50),
+@Game NVARCHAR(50),
+@Score float,
+@Id int ) as begin insert into Score(Id, Nickname, Game, Score)
+values (@Id, @Nickname, @Game, @Score) end
+
 
 
